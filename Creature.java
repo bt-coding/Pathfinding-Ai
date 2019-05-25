@@ -38,6 +38,11 @@ public class Creature{
         geneticCode = gc;
         color = c;
     }
+    public Creature(String gc, Color c, int[] location){
+        geneticCode = gc;
+        color = c;
+        loc=location;
+    }
     private String randomize(int a){
         String temp = "";
         for(int b = 0; b < a; b++){
@@ -46,6 +51,6 @@ public class Creature{
         return temp;
     }
     public Creature clone(){
-        return new Creature(geneticCode,color);
+        return new Creature(geneticCode,color,loc);
     }
 }
