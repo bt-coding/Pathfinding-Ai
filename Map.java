@@ -20,6 +20,16 @@ public class Map{
             for(int y = 10; y < 30; y++){
                 array[25][y] = 1;
             }
+            for(int y = 00; y < 40; y++){
+                if(y < 15 || y > 25){
+                    array[50][y] = 1;
+                }
+            }
+            for(int a = -1; a < 2; a+=2){
+                for(int y = 0; y < 5; y++){
+                    array[70+y][20+(y*a)] = 1;
+                }
+            }
             goalPos = new int[]{95,20};
         }
     }

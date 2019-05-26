@@ -5,7 +5,7 @@ public class main{
     public static void main(String[] args){
         ArrayList<ArrayList<Creature>> creatures = new ArrayList<ArrayList<Creature>>();
         int numTestGroups = 5;
-        int creaturesPerTestGroup = 400;
+        int creaturesPerTestGroup = 200;
         for(int a = 0; a < numTestGroups; a++){
             creatures.add(new ArrayList<Creature>());
             Color color = new Color((int)(255*Math.random()),(int)(255*Math.random()),(int)(255*Math.random()));
@@ -23,11 +23,11 @@ public class main{
         frame.setVisible(true);
         restartCreatures(creatures,map.startPos);
         while(true){
-            for(int a = 0; a < 100;a++){
+            for(int a = 0; a < 200;a++){
                 screen.draw();
                 moveCreatures(creatures,map);
                 try{
-                    Thread.sleep(30);
+                    Thread.sleep(20);
                 }
                 catch(Exception e){
                     System.out.println(e);
@@ -76,11 +76,16 @@ public class main{
     public static String cross(String c1, String c2){
         String temp = "";
         for(int a = 0; a < c1.length(); a++){
-            if(Math.random() < 0.5){
-                temp += c1.substring(a,a+1);
+            if(Math.random() < 0.003){
+                temp += (int)(Math.random()*4);
             }
             else{
-                temp += c2.substring(a,a+1);
+                if(Math.random() < 0.5){
+                    temp += c1.substring(a,a+1);
+                }
+                else{
+                    temp += c2.substring(a,a+1);
+                }
             }
         }
         return temp;
