@@ -5,7 +5,7 @@ public class main{
     public static void main(String[] args){
         ArrayList<ArrayList<Creature>> creatures = new ArrayList<ArrayList<Creature>>();
         int numTestGroups = 5;
-        int creaturesPerTestGroup = 100;
+        int creaturesPerTestGroup = 400;
         for(int a = 0; a < numTestGroups; a++){
             creatures.add(new ArrayList<Creature>());
             Color color = new Color((int)(255*Math.random()),(int)(255*Math.random()),(int)(255*Math.random()));
@@ -23,11 +23,11 @@ public class main{
         frame.setVisible(true);
         restartCreatures(creatures,map.startPos);
         while(true){
-            for(int a = 0; a < 400;a++){
+            for(int a = 0; a < 100;a++){
                 screen.draw();
                 moveCreatures(creatures,map);
                 try{
-                    Thread.sleep(50);
+                    Thread.sleep(30);
                 }
                 catch(Exception e){
                     System.out.println(e);
@@ -36,6 +36,7 @@ public class main{
             System.out.println("restarted");
             creatures = newGen(creatures,map);
             restartCreatures(creatures,map.startPos);
+            screen.creatures = creatures;
         }
     }
     public static void restartCreatures(ArrayList<ArrayList<Creature>> cs,int[] sl){
@@ -63,8 +64,8 @@ public class main{
         double topPercent = 0.2;
         c = sort(c,m);
         ArrayList<ArrayList<Creature>> gen = new ArrayList<ArrayList<Creature>>();
-        ArrayList<Creature> temp = new ArrayList<Creature>();
         for(int a = 0; a < c.size(); a++){
+            ArrayList<Creature> temp = new ArrayList<Creature>();
             for(int b = 0; b < c.get(a).size(); b++){
                 temp.add(new Creature(cross(c.get(a).get((int)(c.get(a).size()*topPercent*Math.random())).geneticCode,c.get(a).get((int)(c.get(a).size()*topPercent*Math.random())).geneticCode),c.get(a).get(b).color));
             }
