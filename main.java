@@ -26,6 +26,9 @@ public class main{
             for(int a = 0; a < 200;a++){
                 screen.draw();
                 moveCreatures(creatures,map);
+                if(checkEnd(creatures, map)){
+                    break;
+                }
                 try{
                     Thread.sleep(20);
                 }
@@ -89,6 +92,17 @@ public class main{
             }
         }
         return temp;
+    }
+    public static boolean checkEnd(ArrayList<ArrayList<Creature>> cs, Map m){
+        for(ArrayList<Creature> a: cs){
+            for(Creature c: a){
+                if(c.loc[0] == m.goalPos[0] && c.loc[1] == m.goalPos[1]){
+                    System.out.println("Test");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     public static ArrayList<ArrayList<Creature>> sort(ArrayList<ArrayList<Creature>> c, Map m){
         ArrayList<ArrayList<Creature>> gen = new ArrayList<ArrayList<Creature>>();
