@@ -36,7 +36,6 @@ public class main{
                     System.out.println(e);
                 }
             }
-            System.out.println("restarted");
             creatures = newGen(creatures,map);
             restartCreatures(creatures,map.startPos);
             screen.creatures = creatures;
@@ -97,7 +96,6 @@ public class main{
         for(ArrayList<Creature> a: cs){
             for(Creature c: a){
                 if(c.loc[0] == m.goalPos[0] && c.loc[1] == m.goalPos[1]){
-                    System.out.println("Test");
                     return true;
                 }
             }

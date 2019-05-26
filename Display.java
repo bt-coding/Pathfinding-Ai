@@ -32,7 +32,8 @@ public class Display extends JComponent{
         for(int a = 0; a < creatures.size(); a++){
             g.setColor(creatures.get(a).get(0).color);
             for(int b = 0; b < creatures.get(a).size(); b++){
-                g.fillRect(creatures.get(a).get(b).loc[0]*scale,creatures.get(a).get(b).loc[1]*scale,scale,scale);
+                g.fillOval(creatures.get(a).get(b).loc[0]*scale,creatures.get(a).get(b).loc[1]*scale,scale,scale);
+                //g.fillRect(creatures.get(a).get(b).loc[0]*scale,creatures.get(a).get(b).loc[1]*scale,scale,scale);
             }
         }
     }
