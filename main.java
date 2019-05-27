@@ -4,8 +4,8 @@ import java.util.*;
 public class main{
     public static void main(String[] args){
         ArrayList<ArrayList<Creature>> creatures = new ArrayList<ArrayList<Creature>>();
-        int numTestGroups = 5;
-        int creaturesPerTestGroup = 200;
+        int numTestGroups = 7;
+        int creaturesPerTestGroup = 150;
         for(int a = 0; a < numTestGroups; a++){
             creatures.add(new ArrayList<Creature>());
             Color color = new Color((int)(255*Math.random()),(int)(255*Math.random()),(int)(255*Math.random()));
@@ -15,22 +15,22 @@ public class main{
         }
         JFrame frame = new JFrame("Map");
         //frame.setUndecorated(true);
-        Map map = new Map(1);
+        Map map = new Map(2);
         Display screen = new Display(map,creatures);
         frame.add(screen);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1500,600);
+        frame.setSize(1550,1050);
         frame.setVisible(true);
         restartCreatures(creatures,map.startPos);
         while(true){
-            for(int a = 0; a < 200;a++){
+            for(int a = 0; a < 600;a++){
                 screen.draw();
                 moveCreatures(creatures,map);
                 if(checkEnd(creatures, map)){
                     break;
                 }
                 try{
-                    Thread.sleep(20);
+                    Thread.sleep(10);
                 }
                 catch(Exception e){
                     System.out.println(e);
@@ -78,7 +78,7 @@ public class main{
     public static String cross(String c1, String c2){
         String temp = "";
         for(int a = 0; a < c1.length(); a++){
-            if(Math.random() < 0.003){
+            if(Math.random() < 0.008){
                 temp += (int)(Math.random()*4);
             }
             else{

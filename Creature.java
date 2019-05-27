@@ -7,7 +7,7 @@ public class Creature{
     Color color;
     int geneticIndex;
     public Creature(Color c){
-        stringLength = 400;
+        stringLength = 600;
         geneticCode = randomize(stringLength);
         color = c;
         startRound(new int[2]);

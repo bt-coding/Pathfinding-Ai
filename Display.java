@@ -7,7 +7,7 @@ public class Display extends JComponent{
     ArrayList<ArrayList<Creature>> creatures;
     public Display(Map m,ArrayList<ArrayList<Creature>> c){
         map = m;
-        scale = 12;
+        scale = 7;
         creatures = c;
     }
     public void draw(){
