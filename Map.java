@@ -7,8 +7,8 @@ public class Map{
     public Map(int mapNum){
         maxX = 100;
         maxY = 40;
-        getMap(mapNum);
         startPos = new int[]{10,10};
+        getMap(mapNum);
     }
     public void getMap(int mn){
         if(mn == 0){
@@ -65,6 +65,64 @@ public class Map{
                 array[15+a][105-a] = 1;
                 array[85+a][75+a] = 1;
                 array[75+a][85+a] = 1;
+            }
+        }
+        else if(mn  == 3){
+            maxX =  100;
+            maxY = 50;
+            array = new int[maxX][maxY];
+            startPos = new int[]{5,25};
+            goalPos = new int[]{95,25};
+            for(int y = 0; y < 30; y++){
+                array[12][y] = 1;
+            }
+            for(int y = 40; y < 50; y++){
+                array[12][y] = 1;
+            }
+            for(int y = 35; y < 50; y++){
+                array[25][y] = 1;
+            }
+            for(int x = 25; x < 36; x++){
+                array[x][25] = 1;
+                array[x][15] = 1;
+            }
+            for(int y = 0; y < 16; y++){
+                array[36][y] = 1;
+            }
+            for(int y = 25; y < 50; y++){
+                array[36][y] = 1;
+            }
+            for(int y = 15; y < 35; y ++){
+                array[50][y] = 1;
+                array[59][y] = 1;
+            }
+            for(int y = 0; y < 5; y++){
+                array[50][y] = 1;
+                array[59][y] = 1;
+                array[50][y+45] = 1;
+                array[59][y+45] = 1;
+                array[70][y+45] = 1;
+                array[80][y+45] = 1;
+            }
+            for(int x = 51; x < 60; x++){
+                array[x][4] = 1;
+                array[x][15] = 1;
+                array[x][34] = 1;
+                array[x][45] = 1;
+                array[x+20][34] = 1;
+                array[x+20][45] = 1;
+            }
+            for(int y = 0; y < 35; y++){
+                array[70][y] = 1;
+                array[80][y] = 1;
+            }
+            for(int y = 0; y < 20; y++){
+                array[90][y] = 1;
+                array[90][30+y] = 1;
+            }
+            for(int x = 91; x < 100; x++){
+                array[x][19] = 1;
+                array[x][30] = 1;
             }
         }
     }

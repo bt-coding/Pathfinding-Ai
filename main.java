@@ -15,7 +15,7 @@ public class main{
         }
         JFrame frame = new JFrame("Map");
         //frame.setUndecorated(true);
-        Map map = new Map(2);
+        Map map = new Map(3);
         Display screen = new Display(map,creatures);
         frame.add(screen);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
